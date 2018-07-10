@@ -1,13 +1,13 @@
 import React from 'react'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import myRetailTheme from 'config/themeConfig'
 
-export default class App extends React.Component {
-  constructor (props) {
-    super(props)
-  }
+import Item from './Item/Item'
 
-  render () {
-    return (
-      <div />
-    )
-  }
-}
+const App = () => (
+  <MuiThemeProvider theme={myRetailTheme}>
+    <Item />
+  </MuiThemeProvider>
+)
+
+export default App
