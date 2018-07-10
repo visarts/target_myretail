@@ -9,7 +9,6 @@
   ],
   "plugins" : [
     "array-includes",
-    "syntax-dynamic-import",
     "transform-class-properties",
     "transform-object-rest-spread",
     "babel-plugin-styled-components"

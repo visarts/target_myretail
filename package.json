@@ -17,7 +17,10 @@
     "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-slick": "^0.23.1",
     "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^3.3.3"
   },
   "devDependencies": {
@@ -32,7 +35,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
-    "css-loader": "^1.0.0",
+    "css-loader": "^0.28.7",
     "eslint": "^4.9.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
@@ -44,6 +47,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^3.8.1",
