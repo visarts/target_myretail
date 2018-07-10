@@ -34,7 +34,6 @@ npm manifest:
       "react": "^16.4.1",
       "react-dom": "^16.4.1",
       "react-redux": "^5.0.7",
-      "react-slick": "^0.23.1",
       "redux": "^4.0.0",
       "redux-thunk": "^2.3.0",
       "styled-components": "^3.3.3"
@@ -48,6 +47,7 @@ npm manifest:
       "babel-plugin-styled-components": "^1.5.1",
       "babel-plugin-transform-class-properties": "^6.24.1",
       "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-polyfill": "^6.26.0",
       "babel-preset-env": "^1.7.0",
       "babel-preset-react": "^6.24.1",
       "clean-webpack-plugin": "^0.1.19",
@@ -64,10 +64,38 @@ npm manifest:
       "file-loader": "^1.1.11",
       "html-webpack-plugin": "^3.2.0",
       "node-sass": "^4.9.2",
+      "prop-types": "^15.6.2",
       "sass-loader": "^7.0.3",
       "style-loader": "^0.21.0",
       "webpack": "^3.8.1",
       "webpack-dev-server": "^2.9.2"
+    },
+    "eslintConfig": {
+      "extends": [
+        "standard",
+        "standard-jsx"
+      ],
+      "parser": "babel-eslint",
+      "rules": {
+        "strict": 0,
+        "comma-dangle": [
+          2,
+          "always-multiline"
+        ],
+        "jsx-quotes": [
+          "error",
+          "prefer-double"
+        ],
+        "no-console": 1
+      },
+      "globals": {
+        "afterEach": true,
+        "beforeEach": true,
+        "describe": true,
+        "expect": true,
+        "it": true,
+        "jest": true
+      }
     }
   }
 
@@ -1008,6 +1036,14 @@ Lockfile:
     dependencies:
       babel-runtime "^6.22.0"
       babel-types "^6.24.1"
+  
+  babel-polyfill@^6.26.0:
+    version "6.26.0"
+    resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
+    dependencies:
+      babel-runtime "^6.26.0"
+      core-js "^2.5.0"
+      regenerator-runtime "^0.10.5"
   
   babel-preset-env@^1.7.0:
     version "1.7.0"
@@ -2212,10 +2248,6 @@ Lockfile:
       memory-fs "^0.4.0"
       object-assign "^4.0.1"
       tapable "^0.2.7"
-  
-  enquire.js@^2.1.6:
-    version "2.1.6"
-    resolved "https://registry.yarnpkg.com/enquire.js/-/enquire.js-2.1.6.tgz#3e8780c9b8b835084c3f60e166dbc3c2a3c89814"
   
   entities@~1.1.1:
     version "1.1.1"
@@ -3738,12 +3770,6 @@ Lockfile:
     version "5.0.1"
     resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   
-  json2mq@^0.2.0:
-    version "0.2.0"
-    resolved "https://registry.yarnpkg.com/json2mq/-/json2mq-0.2.0.tgz#b637bd3ba9eabe122c83e9720483aeb10d2c904a"
-    dependencies:
-      string-convert "^0.2.0"
-  
   json3@^3.3.2:
     version "3.3.2"
     resolved "https://registry.yarnpkg.com/json3/-/json3-3.3.2.tgz#3c0434743df93e2f5c42aee7b19bcb483575f4e1"
@@ -5250,16 +5276,6 @@ Lockfile:
       loose-envify "^1.1.0"
       prop-types "^15.6.0"
   
-  react-slick@^0.23.1:
-    version "0.23.1"
-    resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.23.1.tgz#15791c4107f0ba3a5688d5bd97b7b7ceaa0dd181"
-    dependencies:
-      classnames "^2.2.5"
-      enquire.js "^2.1.6"
-      json2mq "^0.2.0"
-      lodash.debounce "^4.0.8"
-      resize-observer-polyfill "^1.5.0"
-  
   react-transition-group@^2.2.1:
     version "2.4.0"
     resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.4.0.tgz#1d9391fabfd82e016f26fabd1eec329dbd922b5a"
@@ -5384,6 +5400,10 @@ Lockfile:
   regenerate@^1.2.1:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
+  
+  regenerator-runtime@^0.10.5:
+    version "0.10.5"
+    resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
   
   regenerator-runtime@^0.11.0:
     version "0.11.1"
@@ -5546,10 +5566,6 @@ Lockfile:
   requires-port@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
-  
-  resize-observer-polyfill@^1.5.0:
-    version "1.5.0"
-    resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
   
   resolve-cwd@^2.0.0:
     version "2.0.0"
@@ -6028,10 +6044,6 @@ Lockfile:
   strict-uri-encode@^1.0.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
-  
-  string-convert@^0.2.0:
-    version "0.2.1"
-    resolved "https://registry.yarnpkg.com/string-convert/-/string-convert-0.2.1.tgz#6982cc3049fbb4cd85f8b24568b9d9bf39eeff97"
   
   string-width@^1.0.1, string-width@^1.0.2:
     version "1.0.2"
@@ -6780,7 +6792,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 2
+  Exit code: 1
   Command: sh
   Arguments: -c webpack && webpack-dev-server
   Directory: /Users/a600749/development/target_myretail
