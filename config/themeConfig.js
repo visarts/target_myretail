@@ -42,6 +42,7 @@ const myRetailTheme = createMuiTheme({
   palette: {
     primary: theme,
     secondary: theme,
+    gradients,
     typography,
   },
   globalValues,

@@ -3,13 +3,18 @@ import PropTypes from 'prop-types'
 import { StyledFlexGroup, StyledFlexGroupItem } from './FlexGroup.style'
 
 const FlexGroup = props => {
+  const childrenWithProps = React.Children.map(props.children, child => {
+    if (child) {
+      return React.cloneElement(child, { spacing: props.spacing })
+    }
+  })
   return (
     <StyledFlexGroup
       vertical={props.vertical}
       horizontal={props.horizontal}
       inlined={props.inlined}
       direction={props.direction}>
-      {props.children}
+      {childrenWithProps}
     </StyledFlexGroup>
   )
 }
@@ -26,7 +31,9 @@ export const FlexGroupItem = props => {
     <StyledFlexGroupItem
       vertical={props.vertical}
       horizontal={props.horizontal}
-      block={props.block}>
+      block={props.block}
+      spacing={props.spacing}
+      direction={props.direction}>
       {props.children}
     </StyledFlexGroupItem>
   )
@@ -36,6 +43,7 @@ FlexGroupItem.propTypes = {
   vertical: PropTypes.string,
   horizontal: PropTypes.string,
   block: PropTypes.bool,
+  direction: PropTypes.string,
 }
 
 export default FlexGroup
