@@ -12,9 +12,15 @@ export const StyledFlexGroup = withTheme()(styled.div`
 
 export const StyledFlexGroupItem = withTheme()(styled.div`
   ${props => css`
-    flex-grow: ${props.block ? 0 : 1};
     display: ${props.block ? 'block' : 'inline-flex'};
+    flex-grow: ${props.block ? 0 : 1};
     align-items: ${props.vertical || 'center'};
     justify-content: ${props.horizontal || 'flex-start'};
+    flex-direction: ${props.direction || 'row'};
+    ${props.spacing && css`
+      &:not(:last-child) {
+        margin-right: ${props.theme.sizes[props.spacing]};
+      }
+    `}
   `}
 `)

@@ -14,9 +14,11 @@ const Typography = props => {
       element={variantMap[props.variant] || variantMap.default}
       size={props.size}
       block={props.block}
+      spacing={props.spacing}
       variant={props.variant || 'default'}
       gutter={props.gutter || 'none'}
       strong={props.strong}
+      slim={props.slim}
       color={props.color || 'main'}>
       {props.children}
     </StyledTypography>

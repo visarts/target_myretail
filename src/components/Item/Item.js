@@ -15,6 +15,10 @@ import ItemGallery from '../ItemGallery/ItemGallery'
 import ItemReviews from '../ItemReviews/ItemReviews'
 import ItemPricing from '../ItemPricing/ItemPricing'
 import ItemPromotions from '../ItemPromotions/ItemPromotions'
+import ItemQuantity from '../ItemQuantity/ItemQuantity'
+import ItemActionsPrimary from '../ItemActionsPrimary/ItemActionsPrimary'
+import ItemReturns from '../ItemReturns/ItemReturns'
+import ItemActionsSecondary from '../ItemActionsSecondary/ItemActionsSecondary'
 
 class Item extends React.Component {
   constructor (props) {
@@ -41,6 +45,10 @@ class Item extends React.Component {
             <ItemReviews reviews={_.head(itemData.CustomerReview)} />
             <ItemPricing offerPrice={_.head(_.head(itemData.Offers).OfferPrice)} />
             <ItemPromotions promotions={itemData.Promotions} />
+            <ItemQuantity />
+            <ItemActionsPrimary purchasingChannelCode={parseInt(itemData.purchasingChannelCode)} />
+            <ItemReturns returnPolicy={_.head(itemData.ReturnPolicy)} />
+            <ItemActionsSecondary />
           </React.Fragment>
         )}
       </React.Fragment>
