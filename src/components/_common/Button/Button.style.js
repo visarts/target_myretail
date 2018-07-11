@@ -7,7 +7,7 @@ export const StyledButton = withTheme()(styled.button`
   border-radius: 3px;
   ${props => css`
     ${props.variant === 'secondary' && css`
-      background: ${props.theme.palette.primary.default};
+      background: ${props.theme.palette.primary.lightGrey};
     `}
     ${props.variant === 'primary' && css`
       background: ${props.theme.palette.gradients[props.color]};
