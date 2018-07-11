@@ -8,9 +8,9 @@ const Btn = props => {
   const content = (
     <StyledBtn
       disabled={props.disabled}
-      size={props.size}
       aria-label={props['aria-label'] || ''}
       color="inherit"
+      background={props.background || 'white'}
       customColor={props.customColor || 'main'}
       onClick={props.onClick || (() => false)}>
       <Icon id="btnIcon" color={props.color || 'inherit'} name={props.icon} size="xl" />

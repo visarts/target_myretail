@@ -3,7 +3,7 @@ import { Typography } from 'common'
 
 const ItemTitle = props => {
   return (
-    <Typography variant="header" size="xxl">{props.children}</Typography>
+    <Typography variant="header" size="xxl" slim>{props.children}</Typography>
   )
 }
 
