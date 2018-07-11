@@ -11,7 +11,10 @@ import {
 } from 'common'
 
 import ItemTitle from '../ItemTitle/ItemTitle'
-import ItemImages from '../ItemImages/ItemImages'
+import ItemGallery from '../ItemGallery/ItemGallery'
+import ItemReviews from '../ItemReviews/ItemReviews'
+import ItemPricing from '../ItemPricing/ItemPricing'
+import ItemPromotions from '../ItemPromotions/ItemPromotions'
 
 class Item extends React.Component {
   constructor (props) {
@@ -20,21 +23,24 @@ class Item extends React.Component {
   }
 
   componentDidUpdate = () => {
-    console.log(this.props)
+    // console.log(this.props)
   }
 
   render () {
     const { props } = this
     const { isPending, apiData } = props.apiData
     const itemData = apiData && _.head(apiData.CatalogEntryView)
-
+    console.log(itemData)
     return (
       <React.Fragment>
         <Spinner show={isPending} />
         {itemData && (
           <React.Fragment>
             <ItemTitle>{itemData.title}</ItemTitle>
-            <ItemImages images={_.head(itemData.Images)} />
+            <ItemGallery images={_.head(itemData.Images)} />
+            <ItemReviews reviews={_.head(itemData.CustomerReview)} />
+            <ItemPricing offerPrice={_.head(_.head(itemData.Offers).OfferPrice)} />
+            <ItemPromotions promotions={itemData.Promotions} />
           </React.Fragment>
         )}
       </React.Fragment>

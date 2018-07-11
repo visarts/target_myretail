@@ -4,9 +4,11 @@ export const theme = {
   white: '#fff',
   black: '#010101',
   darkGrey: '#444444',
+  lightGrey: '#F8F6F4',
   red: '#CC0000',
   lightRed: '#DD5555',
   default: '#BFBFBF',
+  defaultLight: '#AAAAAA',
   main: '#010101',
 }
 
@@ -24,12 +26,25 @@ export const gradients = {
   black: `linear-gradient(to bottom, ${theme.darkGrey}, ${theme.black})`,
 }
 
+export const sizes = {
+  xs: '5px',
+  sm: '10px',
+  md: '15px',
+  lg: '20px',
+  xl: '35px',
+}
+
+export const globalValues = {
+  padding: sizes.lg,
+}
+
 const myRetailTheme = createMuiTheme({
   palette: {
     primary: theme,
     secondary: theme,
     typography,
   },
+  globalValues,
   typography: {
     xs: '10px',
     sm: '12px',
@@ -38,18 +53,12 @@ const myRetailTheme = createMuiTheme({
     xl: '20px',
     xxl: '26px',
   },
-  sizes: {
-    xs: '5px',
-    sm: '10px',
-    md: '15px',
-    lg: '20px',
-    xl: '40px',
-  },
+  sizes,
   boxShadows: {
     sm: '3px 3px 7px rgba(0, 0, 0, .2)',
   },
   borders: {
-    light: `1px solid ${theme.default}`,
+    light: `1px solid ${theme.defaultLight}`,
   },
 })
 
