@@ -13,6 +13,10 @@ const Typography = props => {
     <StyledTypography
       element={variantMap[props.variant] || variantMap.default}
       size={props.size}
+      block={props.block}
+      variant={props.variant || 'default'}
+      gutter={props.gutter || 'none'}
+      strong={props.strong}
       color={props.color || 'main'}>
       {props.children}
     </StyledTypography>
@@ -22,7 +26,10 @@ const Typography = props => {
 Typography.propTypes = {
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
+  block: PropTypes.bool,
+  strong: PropTypes.bool,
   variant: PropTypes.string,
+  gutter: PropTypes.string,
 }
 
 export default Typography

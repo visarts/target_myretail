@@ -3,7 +3,7 @@ import _ from 'lodash'
 
 import { Btn, Typography } from 'common'
 
-export default class ItemImages extends React.Component {
+export default class ItemGallery extends React.Component {
   render () {
     const primaryImageUrl = _.head(this.props.images.PrimaryImage).image
     const alternateImages = this.props.images.AlternateImages
