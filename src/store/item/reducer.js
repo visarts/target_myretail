@@ -6,7 +6,7 @@ export const initialState = {
   quantity: 1,
 }
 
-export default function apiDataReducer (state = initialState, action) {
+export default function itemReducer (state = initialState, action) {
   switch (action.type) {
     case UPDATE_ITEM_QUANTITY: {
       return {
