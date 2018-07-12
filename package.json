@@ -1,6 +1,6 @@
 {
   "name": "target_myretail",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Customer facing UI for the online retail grocery store",
   "repository": "https://github.com/visarts/target_myretail.git",
   "author": "brendanBest <brendan.best@target.com>",
