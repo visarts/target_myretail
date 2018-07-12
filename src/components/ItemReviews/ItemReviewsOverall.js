@@ -14,7 +14,9 @@ const ItemReviewsOverall = props => {
         <Typography size="md" strong>overall</Typography>
       </FlexGroupItem>
       <FlexGroupItem horizontal="flex-end">
-        <Typography size="md" strong>view all {props.totalReviews} reviews</Typography>
+        <a href="">
+          <Typography size="md" strong>view all {props.totalReviews} reviews</Typography>
+        </a>
       </FlexGroupItem>
     </FlexGroup>
   )

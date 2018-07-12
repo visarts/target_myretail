@@ -19,6 +19,13 @@ import ItemQuantity from '../ItemQuantity/ItemQuantity'
 import ItemActionsPrimary from '../ItemActionsPrimary/ItemActionsPrimary'
 import ItemReturns from '../ItemReturns/ItemReturns'
 import ItemActionsSecondary from '../ItemActionsSecondary/ItemActionsSecondary'
+import ItemFeatures from '../ItemFeatures/ItemFeatures'
+
+import {
+  StyledItem,
+  StyledItemContainer,
+  StyledItemComponent,
+} from './Item.style'
 
 class Item extends React.Component {
   constructor (props) {
@@ -26,30 +33,52 @@ class Item extends React.Component {
     this.props.fetchApiData()
   }
 
-  componentDidUpdate = () => {
-    // console.log(this.props)
-  }
-
   render () {
     const { props } = this
     const { isPending, apiData } = props.apiData
     const itemData = apiData && _.head(apiData.CatalogEntryView)
-    console.log(itemData)
     return (
       <React.Fragment>
         <Spinner show={isPending} />
         {itemData && (
-          <React.Fragment>
-            <ItemTitle>{itemData.title}</ItemTitle>
-            <ItemGallery images={_.head(itemData.Images)} />
-            <ItemReviews reviews={_.head(itemData.CustomerReview)} />
-            <ItemPricing offerPrice={_.head(_.head(itemData.Offers).OfferPrice)} />
-            <ItemPromotions promotions={itemData.Promotions} />
-            <ItemQuantity />
-            <ItemActionsPrimary purchasingChannelCode={parseInt(itemData.purchasingChannelCode)} />
-            <ItemReturns returnPolicy={_.head(itemData.ReturnPolicy)} />
-            <ItemActionsSecondary />
-          </React.Fragment>
+          <StyledItem>
+            <StyledItemContainer>
+              <StyledItemComponent>
+                <ItemTitle>{itemData.title}</ItemTitle>
+              </StyledItemComponent>
+              <StyledItemComponent>
+                <ItemGallery images={_.head(itemData.Images)} />
+              </StyledItemComponent>
+            </StyledItemContainer>
+            <StyledItemContainer>
+              <StyledItemComponent>
+                <ItemPricing offerPrice={_.head(_.head(itemData.Offers).OfferPrice)} />
+              </StyledItemComponent>
+              <StyledItemComponent>
+                <ItemPromotions promotions={itemData.Promotions} />
+              </StyledItemComponent>
+              <StyledItemComponent>
+                <ItemQuantity />
+              </StyledItemComponent>
+              <StyledItemComponent>
+                <ItemActionsPrimary purchasingChannelCode={parseInt(itemData.purchasingChannelCode)} />
+              </StyledItemComponent>
+              <StyledItemComponent>
+                <ItemReturns returnPolicy={_.head(itemData.ReturnPolicy)} />
+              </StyledItemComponent>
+              <StyledItemComponent>
+                <ItemActionsSecondary />
+              </StyledItemComponent>
+              <StyledItemComponent>
+                <ItemFeatures features={_.head(itemData.ItemDescription).features} />
+              </StyledItemComponent>
+            </StyledItemContainer>
+            <StyledItemContainer>
+              <StyledItemComponent>
+                <ItemReviews reviews={_.head(itemData.CustomerReview)} />
+              </StyledItemComponent>
+            </StyledItemContainer>
+          </StyledItem>
         )}
       </React.Fragment>
     )

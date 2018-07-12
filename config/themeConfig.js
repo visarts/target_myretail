@@ -36,6 +36,7 @@ export const sizes = {
 
 export const globalValues = {
   padding: sizes.lg,
+  maxWidth: '300px',
 }
 
 const myRetailTheme = createMuiTheme({
@@ -53,11 +54,9 @@ const myRetailTheme = createMuiTheme({
     lg: '16px',
     xl: '20px',
     xxl: '26px',
+    huge: '37px',
   },
   sizes,
-  boxShadows: {
-    sm: '3px 3px 7px rgba(0, 0, 0, .2)',
-  },
   borders: {
     light: `1px solid ${theme.defaultLight}`,
   },

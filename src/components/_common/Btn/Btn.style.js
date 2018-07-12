@@ -13,8 +13,8 @@ export const StyledBtn = withTheme()(styled(({customColor, ...other}) => {
     ${props => css`
       background: ${props.disabled ? props.theme.palette.primary.lightGrey : props.theme.palette.primary[props.background]};
       color: ${props.theme.palette.primary[props.customColor]};
-      width: calc(${props.theme.sizes.xl} + 5px);
-      height: calc(${props.theme.sizes.xl} + 5px);
+      width: calc(${props.theme.sizes.xl} + 2px);
+      height: calc(${props.theme.sizes.xl} + 2px);
     `}
   }
 `)

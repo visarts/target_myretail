@@ -10,7 +10,7 @@ import { StyledItemReviewsFeatureBlock, StyledItemsReviewFeatureBlockHeader } fr
 const ItemReviewsFeatureBlock = props => {
   return (
     <StyledItemReviewsFeatureBlock>
-      <FlexGroup vertical="flex-start">
+      <FlexGroup vertical="flex-start" evenSpread>
         <FlexGroupItem>
           <FlexGroupItem block>
             <StyledItemsReviewFeatureBlockHeader>
