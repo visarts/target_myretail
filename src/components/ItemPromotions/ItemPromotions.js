@@ -13,12 +13,12 @@ const ItemPromotions = props => {
   return (
     <StyledItemPromotions>
       {_.map(props.promotions, item => (
-        <FlexGroup spacing="sm" key={item.promotionIdentifier}>
+        <FlexGroup spacing="sm" key={item.promotionIdentifier} vertical="flex-start">
           <FlexGroupItem noGrow>
             <Icon name="local_offer" size="lg" color="red" />
           </FlexGroupItem>
           <FlexGroupItem noGrow>
-            <Typography color="red" size="xl"> {_.head(item.Description).shortDescription}</Typography>
+            <Typography color="red" size="husky"> {_.head(item.Description).shortDescription}</Typography>
           </FlexGroupItem>
         </FlexGroup>
       ))}

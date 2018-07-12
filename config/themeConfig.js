@@ -31,7 +31,9 @@ export const sizes = {
   sm: '10px',
   md: '15px',
   lg: '20px',
+  husky: '30px',
   xl: '35px',
+  xxl: '45px',
 }
 
 export const globalValues = {
@@ -52,6 +54,7 @@ const myRetailTheme = createMuiTheme({
     sm: '12px',
     md: '14px',
     lg: '16px',
+    husky: '18px',
     xl: '20px',
     xxl: '26px',
     huge: '37px',

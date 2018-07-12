@@ -43,40 +43,20 @@ class Item extends React.Component {
         {itemData && (
           <StyledItem>
             <StyledItemContainer>
-              <StyledItemComponent>
-                <ItemTitle>{itemData.title}</ItemTitle>
-              </StyledItemComponent>
-              <StyledItemComponent>
-                <ItemGallery images={_.head(itemData.Images)} />
-              </StyledItemComponent>
+              <StyledItemComponent><ItemTitle>{itemData.title}</ItemTitle></StyledItemComponent>
+              <StyledItemComponent><ItemGallery images={_.head(itemData.Images)} /></StyledItemComponent>
             </StyledItemContainer>
             <StyledItemContainer>
-              <StyledItemComponent>
-                <ItemPricing offerPrice={_.head(_.head(itemData.Offers).OfferPrice)} />
-              </StyledItemComponent>
-              <StyledItemComponent>
-                <ItemPromotions promotions={itemData.Promotions} />
-              </StyledItemComponent>
-              <StyledItemComponent>
-                <ItemQuantity />
-              </StyledItemComponent>
-              <StyledItemComponent>
-                <ItemActionsPrimary purchasingChannelCode={parseInt(itemData.purchasingChannelCode)} />
-              </StyledItemComponent>
-              <StyledItemComponent>
-                <ItemReturns returnPolicy={_.head(itemData.ReturnPolicy)} />
-              </StyledItemComponent>
-              <StyledItemComponent>
-                <ItemActionsSecondary />
-              </StyledItemComponent>
-              <StyledItemComponent>
-                <ItemFeatures features={_.head(itemData.ItemDescription).features} />
-              </StyledItemComponent>
+              <StyledItemComponent><ItemPricing offerPrice={_.head(_.head(itemData.Offers).OfferPrice)} /></StyledItemComponent>
+              <StyledItemComponent><ItemPromotions promotions={itemData.Promotions} /></StyledItemComponent>
+              <StyledItemComponent><ItemQuantity /></StyledItemComponent>
+              <StyledItemComponent><ItemActionsPrimary purchasingChannelCode={parseInt(itemData.purchasingChannelCode)} /></StyledItemComponent>
+              <StyledItemComponent><ItemReturns returnPolicy={_.head(itemData.ReturnPolicy)} /></StyledItemComponent>
+              <StyledItemComponent><ItemActionsSecondary /></StyledItemComponent>
+              <StyledItemComponent specialFloat><ItemFeatures features={_.head(itemData.ItemDescription).features} /></StyledItemComponent>
             </StyledItemContainer>
             <StyledItemContainer>
-              <StyledItemComponent>
-                <ItemReviews reviews={_.head(itemData.CustomerReview)} />
-              </StyledItemComponent>
+              <StyledItemComponent><ItemReviews reviews={_.head(itemData.CustomerReview)} /></StyledItemComponent>
             </StyledItemContainer>
           </StyledItem>
         )}

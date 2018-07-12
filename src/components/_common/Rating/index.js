@@ -14,7 +14,7 @@ const Rating = props => {
     <FlexGroup>
       {_.map(_.range(scale || 5), item => (
         <FlexGroupItem key={item} block={props.block}>
-          <Icon size={props.size || 'xl'} name="star_rate" color={item < total ? 'red' : 'default'} />
+          <Icon size={props.size || 'husky'} name="star_rate" color={item < total ? 'red' : 'default'} />
         </FlexGroupItem>
       ))}
     </FlexGroup>
