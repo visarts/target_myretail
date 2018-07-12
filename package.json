@@ -1,6 +1,6 @@
 {
   "name": "target_myretail",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Customer facing UI for the online retail grocery store",
   "repository": "https://github.com/visarts/target_myretail.git",
   "author": "brendanBest <brendan.best@target.com>",
@@ -9,7 +9,8 @@
     "start": "webpack && webpack-dev-server",
     "build": "webpack --config webpack.config.prod.js",
     "lint": "eslint /.eslintrc",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "release": "standard-version"
   },
   "dependencies": {
     "@material-ui/core": "^1.3.1",
@@ -59,6 +60,7 @@
     "node-sass": "^4.9.2",
     "prop-types": "^15.6.2",
     "sass-loader": "^7.0.3",
+    "standard-version": "^4.4.0",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^3.8.1",
