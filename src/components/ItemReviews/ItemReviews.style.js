@@ -22,3 +22,10 @@ export const StyledItemsReview = withTheme()(styled.div`
     padding-top: ${props.theme.globalValues.padding};
   `}
 `)
+
+export const StyledItemsReviewOverall = withTheme()(styled.div`
+  ${props => css`
+    padding-left: ${props.theme.globalValues.padding};
+    padding-right: ${props.theme.globalValues.padding};
+  `}
+`)
