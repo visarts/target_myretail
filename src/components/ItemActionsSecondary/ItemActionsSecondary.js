@@ -8,14 +8,14 @@ import {
 
 const ItemActionsSecondary = props => {
   return (
-    <FlexGroup spacing="xs">
-      <FlexGroupItem horizontal="center">
+    <FlexGroup spacing="xs" evenSpread>
+      <FlexGroupItem>
         <Button variant="secondary" background="black">ADD TO REGISTRY</Button>
       </FlexGroupItem>
-      <FlexGroupItem horizontal="center">
+      <FlexGroupItem>
         <Button variant="secondary" background="black">ADD TO LIST</Button>
       </FlexGroupItem>
-      <FlexGroupItem horizontal="center">
+      <FlexGroupItem>
         <Button variant="secondary" background="black">SHARE</Button>
       </FlexGroupItem>
     </FlexGroup>

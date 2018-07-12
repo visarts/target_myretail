@@ -17,16 +17,18 @@ const ItemReview = props => {
   return (
     <StyledItemsReview>
       <FlexGroup direction="column" vertical="flex-start">
-        <Rating size="lg" total={total} block />
-        <Typography variant="subHeader" size="lg" strong>
-          {props.review.title}
-        </Typography>
-        <Typography size="md">
-          {props.review.review}
-        </Typography>
-        <Typography size="md" gutter="top" block>
-          <a href="">{props.review.screenName}</a> {datePosted}
-        </Typography>
+        <FlexGroupItem direction="column" vertical="flex-start">
+          <Rating size="lg" total={total} block />
+          <Typography variant="subHeader" size="lg" strong>
+            {props.review.title}
+          </Typography>
+          <Typography size="sm">
+            {props.review.review}
+          </Typography>
+          <Typography size="sm" gutter="top" block>
+            <a href="">{props.review.screenName}</a> {datePosted}
+          </Typography>
+        </FlexGroupItem>
       </FlexGroup>
     </StyledItemsReview>
   )

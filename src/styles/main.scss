@@ -3,10 +3,17 @@
 body {
   font: 1em 'Helvetica', 'Arial', sans-serif;
   line-height: 1.35;
-  padding-bottom: 50px;
 }
 
 a, a:visited, a:active {
   color: #4455FF;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: 400;
 }
