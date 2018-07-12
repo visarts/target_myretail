@@ -3,7 +3,7 @@ import Typography from '../Typography'
 import { StyledButton } from './Button.style'
 
 const Button = props => {
-  const typographySize = props.variant === 'secondary' ? 'md' : 'xl'
+  const typographySize = props.variant === 'secondary' ? 'sm' : 'lg'
   const typographyColor = props.variant === 'primary' ? 'white' : 'main'
   return (
     <StyledButton

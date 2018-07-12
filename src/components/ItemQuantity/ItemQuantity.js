@@ -32,7 +32,7 @@ class ItemQuantity extends React.Component {
         <StyledItemQuantityControls>
           <FlexGroup>
             <FlexGroupItem>
-              <Typography size="md">quantity</Typography>
+              <Typography size="md">quantity:</Typography>
             </FlexGroupItem>
             <FlexGroupItem horizontal="flex-end">
               <Btn
