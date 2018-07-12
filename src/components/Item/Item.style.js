@@ -20,6 +20,7 @@ export const StyledItemContainer = withTheme()(styled.div`
     margin-right: ${props.theme.sizes.xxl};
     @media(max-width: ${props.theme.breakpoints.values.md}px) {
       width: 100%;
+      max-width: 500px;
       margin-right: ${props.theme.sizes.md};
     }
   `}

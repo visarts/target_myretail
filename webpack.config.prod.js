@@ -4,10 +4,7 @@ const ROOT_PATH = path.resolve(__dirname)
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-// const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const MergeJsonWebpackPlugin = require('merge-jsons-webpack-plugin')
-// const AutoPrefixer = require('autoprefixer')
 
 module.exports = {
   devtool: 'source-map',
@@ -39,7 +36,7 @@ module.exports = {
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Portitude: the Art of Learning',
+      title: 'myRetail Grocery',
       inject: true,
       template: './index.ejs',
       hash: true,
@@ -56,14 +53,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({fallbackLoader: 'style-loader', loader: 'css-loader'}),
-      },
-      {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
