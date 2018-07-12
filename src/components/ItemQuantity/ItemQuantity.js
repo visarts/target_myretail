@@ -36,13 +36,15 @@ class ItemQuantity extends React.Component {
             </FlexGroupItem>
             <FlexGroupItem horizontal="flex-end">
               <Btn
+                id="itemQuantityRemoveAction"
                 icon="remove"
                 color="white"
                 background="default"
                 disabled={this.props.item.quantity < 2}
                 onClick={this.onDecreaseQuantity} />
-              <Typography size="lg" spacing="both" strong>{this.props.item.quantity}</Typography>
+              <Typography size="lg" spacing="both" strong id="itemQuantityValue">{this.props.item.quantity}</Typography>
               <Btn
+                id="itemQuantityAddAction"
                 icon="add"
                 color="white"
                 background="default"
