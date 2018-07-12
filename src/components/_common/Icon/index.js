@@ -18,6 +18,7 @@ Icon.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   name: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 }
 
 export default Icon

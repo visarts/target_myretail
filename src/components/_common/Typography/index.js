@@ -32,6 +32,8 @@ Typography.propTypes = {
   strong: PropTypes.bool,
   variant: PropTypes.string,
   gutter: PropTypes.string,
+  slim: PropTypes.bool,
+  spacing: PropTypes.string,
 }
 
 export default Typography

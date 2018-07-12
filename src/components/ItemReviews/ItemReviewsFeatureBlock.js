@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   FlexGroup,
   FlexGroupItem,
@@ -32,6 +33,11 @@ const ItemReviewsFeatureBlock = props => {
       </FlexGroup>
     </StyledItemReviewsFeatureBlock>
   )
+}
+
+ItemReviewsFeatureBlock.propTypes = {
+  pro: PropTypes.object,
+  con: PropTypes.object,
 }
 
 export default ItemReviewsFeatureBlock

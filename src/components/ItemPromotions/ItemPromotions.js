@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash'
 import {
   FlexGroup,
@@ -24,6 +25,10 @@ const ItemPromotions = props => {
       ))}
     </StyledItemPromotions>
   )
+}
+
+ItemPromotions.propTypes = {
+  promotions: PropTypes.array,
 }
 
 export default ItemPromotions
