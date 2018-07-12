@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { updateItemQuantity } from 'store/item/actionCreator'
@@ -24,6 +24,10 @@ class ItemQuantity extends React.Component {
       const quantity = parseInt(this.props.item.quantity - 1)
       this.props.updateItemQuantity(quantity)
     }
+  }
+
+  static propTypes = {
+    item: PropTypes.object,
   }
 
   render () {

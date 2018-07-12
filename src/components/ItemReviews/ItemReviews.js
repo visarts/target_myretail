@@ -8,8 +8,8 @@ const ItemReviews = props => {
   return (
     <React.Fragment>
       <ItemReviewsOverall
-        consolidatedOverallRating={props.reviews.consolidatedOverallRating}
-        totalReviews={props.reviews.totalReviews} />
+        consolidatedOverallRating={parseInt(props.reviews.consolidatedOverallRating)}
+        totalReviews={parseInt(props.reviews.totalReviews)} />
       <ItemReviewsFeatureBlock
         pro={_.head(props.reviews.Pro)}
         con={_.head(props.reviews.Con)} />

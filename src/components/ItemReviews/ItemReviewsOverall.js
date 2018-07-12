@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   FlexGroup,
   FlexGroupItem,
@@ -20,6 +21,11 @@ const ItemReviewsOverall = props => {
       </FlexGroupItem>
     </FlexGroup>
   )
+}
+
+ItemReviewsOverall.propTypes = {
+  consolidatedOverallRating: PropTypes.number,
+  totalReviews: PropTypes.number,
 }
 
 export default ItemReviewsOverall

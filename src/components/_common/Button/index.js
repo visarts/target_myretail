@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Typography from '../Typography'
 import { StyledButton } from './Button.style'
 
@@ -19,6 +20,11 @@ const Button = props => {
       </Typography>
     </StyledButton>
   )
+}
+
+Button.propTypes = {
+  variant: PropTypes.string,
+  background: PropTypes.string,
 }
 
 export default Button
